@@ -1,0 +1,322 @@
+/* Reset */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
+.navBar {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 100px;
+  border-bottom: 2px solid gray;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+nav button {
+  padding: 0 10px;
+  line-height: 80px;
+  color: black;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.navBar ul {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 10px;
+  list-style: none;
+}
+
+.navBar .Img {
+  max-width: 100px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+nav ul li {
+  flex: 1;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+}
+
+/* Banner */
+.banner {
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+  height: 15vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner video {
+  position: absolute;
+  top: 0;
+  left: 33.5%;
+  width: 33%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.banner h1 {
+  font-size: 141px;
+  mix-blend-mode: screen;
+  background: white;
+  transform: scale(0.77, 1.0);
+}
+
+/* Sections */
+section {
+  width: 100%;
+  display: block;
+  padding-bottom: 50px;
+}
+
+/* About */
+.aboutMeSection {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  color: #333;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.aboutMeContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.aboutMeImage img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 5px solid #333;
+}
+
+.aboutMeText {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.aboutMeText h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.aboutMeText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Gallery */
+.gallerySection {
+  padding: 50px 20px;
+  background-color: #d4d4d4;
+  text-align: center;
+  position: relative;
+}
+
+.image-gallery {
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-slide {
+  display: flex;
+  transition: transform 1s ease-in-out;
+}
+
+.gallery-slide img {
+  width: 33.33%;
+  height: auto;
+  object-fit: cover;
+  margin: 0 10px;
+}
+
+/* ---------------- Projects ---------------- */
+.projectsSection {
+  padding: 0 20px 50px;            /* no top padding to avoid extra space */
+  background-color: #e4e4e4;
+  color: #333;
+  text-align: center;
+}
+
+.projectsHeader {
+  max-width: 1400px;
+  margin: 0 auto 24px;
+  padding: 0 20px;
+}
+
+.projectsSection h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0 0 8px;                 /* keep h2 styling intact */
+  color: #222;
+}
+
+.projectsHeader p {
+  margin: 0;                       /* subtitle tight under h2 */
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Grid */
+.projects-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Card */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  /* absolutely no padding/margins inside the card itself */
+  padding: 0;
+  margin: 0;
+  height: auto;                    /* grows with content */
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  box-shadow: 0 6px 12px rgba(0,0,0,.12);
+  background: #fff;
+}
+/* full video visible, letterboxed if needed */
+.project-media {
+  width: 100%;               /* or 100% */
+  aspect-ratio: 16 / 9;     /* keeps consistent frame height */
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;      /* no cropping */
+  object-position: center;
+  background: #000;         /* bars color */
+}
+
+
+/* Text below video */
+.project-info {
+  padding: 12px 16px 18px;         /* tight top padding */
+  text-align: left;
+  color: #333;
+}
+
+.project-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.project-info p {
+  margin: 0;
+  font-size: .98rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .projectsSection { padding-left: 0; padding-right: 0; }
+  .projectsHeader  { padding-left: 16px; padding-right: 16px; }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 0;                         /* edge-to-edge */
+  }
+
+  .project-card {
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .project-info {
+    padding: 14px 16px 18px;
+  }
+}
+
+/* Contact */
+.contactSection {
+  padding: 50px 20px;
+  background-color: #d4d4d4;
+  color: #333;
+  text-align: center;
+}
+
+.contactSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.contactContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contactContent p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button {
+  background-color: #0077b5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover { background-color: #005c8c; }
+
+/* Misc responsive (legacy) */
+@media (max-width: 768px) {
+  .aboutMeContent, .projectsContent, .contactContent {
+    flex-direction: column;
+    text-align: center;
+  }
+  .aboutMeImage img { width: 150px; height: 150px; }
+  .aboutMeText { max-width: 100%; }
+}
